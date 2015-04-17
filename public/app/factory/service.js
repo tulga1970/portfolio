@@ -1,0 +1,3 @@
+mypage.service('service', function(){
+	
+});
