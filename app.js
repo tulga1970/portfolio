@@ -26,7 +26,7 @@ var
   server  = http.createServer( app );
 // ------------- END MODULE SCOPE VARIABLES ---------------
 
-mongoose.connect('mongodb://'+process.env.IP+'/portfolio' || 'mongodb://localhost/portfolio');
+mongoose.connect('mongodb://localhost/portfolio');
 
 // ------------- BEGIN SERVER CONFIGURATION ---------------
 app.configure( function () {
@@ -36,7 +36,7 @@ app.configure( function () {
   //app.use(morgan("dev"));
   app.use(function(req, res, next) {
       res.setHeader('Access-Control-Allow-Origin', '*');
-      res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DElETE');
       res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization');
       next();
   });
