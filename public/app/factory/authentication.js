@@ -1,5 +1,5 @@
 mypage.factory('Authentication', ['$http', '$localStorage', function($http, $localStorage){
-    var baseUrl = "http://localhost:3000";
+    var baseUrl = "https://portfolio-tulga1970.c9.io";
     function changeUser(user) {
         angular.extend(currentUser, user);
     }

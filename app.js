@@ -26,9 +26,7 @@ var
   server  = http.createServer( app );
 // ------------- END MODULE SCOPE VARIABLES ---------------
 
-//mongoose.connect('mongodb://<admin>:<Ongoigootlee>@ds061671.mongolab.com:61671/portfolio');
-//mongoose.connect('mongodb://localhost/portfolio');
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost/portfolio');
+mongoose.connect('mongodb://'+process.env.IP+'/portfolio' || 'mongodb://localhost/portfolio');
 
 // ------------- BEGIN SERVER CONFIGURATION ---------------
 app.configure( function () {
@@ -67,7 +65,7 @@ process.on('uncaughtException', function(err) {
     console.log(err);
 });
 // ----------------- BEGIN START SERVER -------------------
-server.listen( 3000 );
+server.listen( port );
 console.log(
   'Express server listening on port %d in %s mode',
    server.address().port, app.settings.env
